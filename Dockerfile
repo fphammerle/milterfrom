@@ -1,4 +1,4 @@
-FROM alpine:3.10 as build
+FROM alpine:3.14.0 as build
 
 RUN apk add --no-cache \
     cmake \
@@ -18,7 +18,7 @@ RUN mkdir build \
     && make
 
 
-FROM alpine:3.10 as service
+FROM alpine:3.14.0 as service
 
 RUN adduser -S milterfrom \
     && apk add libmilter
